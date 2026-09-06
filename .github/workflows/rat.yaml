@@ -32,11 +32,11 @@ jobs:
           git -C application rev-parse HEAD
 
       - name: Scan for Application Secrets
-        run : |
-          docker run -rm \
-            -v "${GITHUB_WORKAPACE}/application:/repo" \
-            ghcr.io/gitleaks/gitleaks:v8.. \
-            detech \
-            -- source=/repo \
+        run: |
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}/application:/repo" \
+            ghcr.io/gitleaks/gitleaks:v8.28.0 \
+            detect \
+            --source=/repo \
             --no-banner \
             --exit-code 1
