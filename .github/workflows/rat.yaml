@@ -32,11 +32,12 @@ jobs:
           
           - name: Scan for Application Secrets
             run : |
-              docker run -rm \
+              docker run --rm \
                 -v "${GITHUB_WORKSPACE}/application:/repo" \
-                ghcr.io/gitleaks/gitleaks:v8.30.1 \
+                ghcr.io/gitleaks/gitleaks:latest \
                 detect \
                 -- source=/repo \
+                -- no-git \
                 --no-banner \
                 --exit-code 1
               
