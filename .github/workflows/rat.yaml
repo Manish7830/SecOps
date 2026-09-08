@@ -41,3 +41,9 @@ jobs:
                 --no-banner \
                 --exit-code 1
               
+
+          - name: step 4A - List Scanned Files
+            run: |
+              echo "File Inside Gitleaks Scannig Scope :"
+              echo "*******************************************"
+              find application -type f -print
