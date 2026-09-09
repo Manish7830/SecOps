@@ -51,10 +51,10 @@ jobs:
 
   # Steps 2: Dependency Scanning
 
-    trivy:
-      name: Trivy - Dependency Scanning
-      runs-on: ubuntu-latest
-      needs: gitleaks
+  trivy:
+    name: Trivy - Dependency Scanning
+    runs-on: ubuntu-latest
+    needs: gitleaks
 
-      steps:
-        - run : "Trivy Testing Work"
+    steps:
+      - run : "Trivy Testing Work"
