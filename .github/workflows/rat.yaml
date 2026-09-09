@@ -1,12 +1,13 @@
-name: Step 2 - Receive Application Trigger
+name: SecOps PipeLine
 on:
   repository_dispatch:
     types:
         - application_push
 
 jobs:
-    receive-trigger:
-        name: Verify Cross-Repo Communication
+  # Stage 1 : Secrets scanning
+    gitleaks:
+        name: Gitleaks - Secret scsnning
         runs-on: ubuntu-latest
 
         steps:
